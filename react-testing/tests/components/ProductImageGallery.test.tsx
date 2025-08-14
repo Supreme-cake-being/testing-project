@@ -17,11 +17,10 @@ describe("ProductImageGallery", () => {
 
     render(<ProductImageGallery imageUrls={testImageUrls} />);
 
-    const imageList = screen.queryAllByRole("listitem");
+    const imageList = screen.queryAllByRole("img");
     imageList.forEach((image, index) => {
       expect(image).toBeInTheDocument();
-      const img = image.querySelector("img");
-      expect(img).toHaveAttribute("src", testImageUrls[index]);
+      expect(image).toHaveAttribute("src", testImageUrls[index]);
     });
   });
 });
