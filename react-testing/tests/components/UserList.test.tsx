@@ -32,8 +32,8 @@ describe("UserList", () => {
 
     render(<UserList users={testUsers} />);
 
-    const usersList = screen.queryAllByRole("listitem");
-    usersList.forEach((user, index) => {
+    const userList = screen.queryAllByRole("listitem");
+    userList.forEach((user, index) => {
       expect(user).toBeInTheDocument();
       const link = user.querySelector("a");
       expect(link).toHaveAttribute("href", `/users/${testUsers[index].id}`);
